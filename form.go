@@ -90,6 +90,8 @@ func create_task() error {
 				}
 			}
 
+			child_tasks = append(child_tasks, "none")
+
 			opts := huh.NewOptions(child_tasks...)
 
 			return opts
@@ -206,9 +208,11 @@ func create_task() error {
 
 	tags = append(tags, new_tag_name)
 
-	dependency, _ = find_task(dependency_name)
-
-	fmt.Println(description)
+	if dependency_name == "none" {
+		dependency = &Task{}
+	} else {
+		dependency, _ = find_task(dependency_name)
+	}
 
 	cmd := exec.Command(
 		"task",
