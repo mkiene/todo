@@ -19,4 +19,5 @@ Plans
   * Editing tasks
   * Deleting tasks
   * Displaying information
+  * General code cleanup
   * etc.
