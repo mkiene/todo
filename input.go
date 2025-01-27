@@ -1,6 +1,7 @@
 package main
 
 import (
+	"log"
 	"os"
 )
 
@@ -11,7 +12,7 @@ func handle_input() {
 		case "add":
 			err := create_task()
 			if err != nil {
-				// log.Fatal(err)
+				log.Fatal(err)
 			}
 		}
 	}

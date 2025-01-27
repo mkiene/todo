@@ -208,10 +208,13 @@ func create_task() error {
 
 	tags = append(tags, new_tag_name)
 
-	if dependency_name == "none" {
+	if dependency_name == "none" || dependency_name == "" {
 		dependency = &Task{}
 	} else {
-		dependency, _ = find_task(dependency_name)
+		dependency, err = find_task(dependency_name)
+		if err != nil {
+			dependency = &Task{}
+		}
 	}
 
 	cmd := exec.Command(

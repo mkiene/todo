@@ -29,8 +29,6 @@ type Task struct {
 	Until       string       `json:"until,omitempty"`       // Expiration date for recurring tasks
 	UUID        string       `json:"uuid"`                  // Unique identifier (persistent)
 	Parent      string       `json:"parent,omitempty"`      // Parent task UUID (recurring tasks)
-	Imask       int          `json:"imask,omitempty"`       // Recurrence mask (for internal use)
-	Mask        int          `json:"mask,omitempty"`        // Masked tasks in recurring sets
 }
 
 // Annotation represents annotations for a task
